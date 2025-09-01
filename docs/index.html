@@ -4,15 +4,41 @@
 <title>Music Emotion Sonification Examples</title>
 <h1>Music Emotion Sonification Examples</h1>
 
-<h2>😊 Happy</h2>
+<h2>😊 Happy (Predicted Happy) — True Positive</h2>
 <p>Original</p>
 <audio controls src="https://raw.githubusercontent.com/giacomozu/Explainability-Methods-in-Music-Emotion-Recognition/main/examples/Happy_original.wav"></audio>
-<p>Sonified (LRP)</p>
-<audio controls src="https://raw.githubusercontent.com/giacomozu/Explainability-Methods-in-Music-Emotion-Recognition/main/examples/Happy_sonified.wav"></audio>
+<p>Sonification</p>
+<audio controls src="https://raw.githubusercontent.com/giacomozu/Explainability-Methods-in-Music-Emotion-Recognition/main/examples/Happy_sonification.wav"></audio>
 
-<h2>😢 Sad</h2>
+<h2>😢 Sad (Predicted Sad) — True Negative</h2>
 <p>Original</p>
-<audio controls src="https://raw.githubusercontent.com/giacomozu/Explainability-Methods-in-Music-Emotion-Recognition/main/examples/sad01_original.wav"></audio>
-<p>Sonified (LRP)</p>
-<audio controls src="https://raw.githubusercontent.com/giacomozu/Explainability-Methods-in-Music-Emotion-Recognition/main/examples/sad01_sonified.wav"></audio>
+<audio controls src="https://raw.githubusercontent.com/giacomozu/Explainability-Methods-in-Music-Emotion-Recognition/main/examples/Sad_original.wav"></audio>
+<p>Sonification</p>
+<audio controls src="https://raw.githubusercontent.com/giacomozu/Explainability-Methods-in-Music-Emotion-Recognition/main/examples/Sad_sonification.wav"></audio>
+
+<h2>😊 Happy (Predicted Sad) — False Negative</h2>
+<p>Original</p>
+<audio controls src="https://raw.githubusercontent.com/giacomozu/Explainability-Methods-in-Music-Emotion-Recognition/main/examples/Happy_predictedsad_original.wav"></audio>
+<p>Sonification</p>
+<audio controls src="https://raw.githubusercontent.com/giacomozu/Explainability-Methods-in-Music-Emotion-Recognition/main/examples/Happy_predictedsad_sonification.wav"></audio>
+
+<h2>😢 Sad (Predicted Happy) — False Positive</h2>
+<p>Original</p>
+<audio controls src="https://raw.githubusercontent.com/giacomozu/Explainability-Methods-in-Music-Emotion-Recognition/main/examples/Sad_predictedhappy_original.wav"></audio>
+<p>Sonification</p>
+<audio controls src="https://raw.githubusercontent.com/giacomozu/Explainability-Methods-in-Music-Emotion-Recognition/main/examples/Sad_predictedhappy_sonification.wav"></audio>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const audios = document.querySelectorAll("audio");
+    audios.forEach(audio => {
+      if (audio.src.includes("original")) {
+        audio.volume = 0.4; // abbassa gli original
+      } else {
+        audio.volume = 1.0; // lascia sonification a volume pieno
+      }
+    });
+  });
+</script>
+
 </html>

@@ -4,6 +4,10 @@
 <title>Music Emotion Sonification Examples</title>
 <h1>Music Emotion Sonification Examples</h1>
 
+<p><em>Note:</em> the sonified clips usually emphasize only the parts of the audio that the model found most relevant, often high-frequency components.  
+For this reason they may sound much quieter than the originals.  
+👉 We suggest listening to the <strong>sonified versions at maximum volume</strong> for a clearer perception of the effect.</p>
+
 <h2>😊 Happy (Predicted Happy) — True Positive</h2>
 <p>Original</p>
 <audio controls src="https://raw.githubusercontent.com/giacomozu/Explainability-Methods-in-Music-Emotion-Recognition/main/examples/Happy_original.wav"></audio>
@@ -33,7 +37,7 @@
     const audios = document.querySelectorAll("audio");
     audios.forEach(audio => {
       if (audio.src.includes("original")) {
-        audio.volume = 0.4; // abbassa gli original
+        audio.volume = 0.2; // abbassa gli original
       } else {
         audio.volume = 1.0; // lascia sonification a volume pieno
       }
